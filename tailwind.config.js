@@ -74,5 +74,5 @@ export default withUt({
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
+  plugins: [tailwindcssAnimate, tailwindcssForms],
 });
