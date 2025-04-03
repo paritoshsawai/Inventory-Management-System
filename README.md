@@ -1,37 +1,178 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Inventory Management System
 
-## Getting Started
+A comprehensive web-based inventory management solution built with MERN stack (MongoDB, Express, React, Node.js) for efficient tracking, management, and reporting of inventory.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This Inventory Management System provides businesses with a robust platform to track inventory levels, orders, sales, and deliveries. The system is designed to help optimize stock levels, reduce costs, and improve efficiency in inventory operations.
+
+## Features
+
+- **User Authentication & Authorization**: Secure login system with role-based access control
+- **Dashboard**: Visual representation of inventory metrics and KPIs
+- **Product Management**: Add, edit, delete, and view products with details
+- **Stock Tracking**: Real-time monitoring of inventory levels
+- **Order Management**: Create and track purchase orders and sales orders
+- **Supplier & Customer Management**: Maintain detailed information about suppliers and customers
+- **Reports & Analytics**: Generate comprehensive reports for informed decision-making
+- **Barcode/QR Code Integration**: Scan products for quick lookup and updates
+- **Low Stock Alerts**: Automated notifications for inventory replenishment
+- **Multi-location Support**: Manage inventory across different warehouses/locations
+
+## Technologies Used
+
+### Frontend
+- **React.js**: Building the user interface with component-based architecture
+- **Redux**: State management for the application
+- **Material-UI**: React component library for responsive design
+- **Chart.js**: Data visualization for inventory analytics
+- **Axios**: API requests handling
+
+### Backend
+- **Node.js**: JavaScript runtime environment
+- **Express.js**: Web application framework
+- **MongoDB**: NoSQL database for data storage
+- **Mongoose**: MongoDB object modeling for Node.js
+- **JWT**: JSON Web Tokens for authentication
+- **bcrypt**: Password hashing for security
+
+### DevOps & Tools
+- **Git & GitHub**: Version control and code repository
+- **ESLint & Prettier**: Code linting and formatting
+- **Jest**: Testing framework
+- **Heroku/AWS/Azure**: Deployment platforms (select based on your actual deployment)
+
+## Project Structure
+
+```
+inventory-management-system/
+├── client/                     # Frontend React application
+│   ├── public/                 # Public assets
+│   ├── src/
+│   │   ├── actions/            # Redux actions
+│   │   ├── components/         # Reusable UI components
+│   │   ├── layouts/            # Page layouts
+│   │   ├── pages/              # Main application pages
+│   │   ├── reducers/           # Redux reducers
+│   │   ├── services/           # API services
+│   │   ├── utils/              # Utility functions
+│   │   ├── App.js              # Main application component
+│   │   └── index.js            # Entry point
+│   └── package.json            # Frontend dependencies
+│
+├── server/                     # Backend Node.js/Express application
+│   ├── config/                 # Configuration files
+│   ├── controllers/            # Request handlers
+│   ├── middleware/             # Express middleware
+│   ├── models/                 # MongoDB Mongoose models
+│   ├── routes/                 # API routes
+│   ├── utils/                  # Utility functions
+│   ├── validation/             # Input validation
+│   ├── server.js               # Entry point for the server
+│   └── package.json            # Backend dependencies
+│
+├── .env                        # Environment variables (gitignored)
+├── .gitignore                  # Specifies intentionally untracked files
+├── README.md                   # Project documentation
+└── package.json                # Root dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation & Setup
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js (v14+)
+- MongoDB (local or Atlas)
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Steps to Run Locally
 
-## Learn More
+1. Clone the repository
+   ```bash
+   git clone https://github.com/paritoshsawai/Inventory-Management-System.git
+   cd Inventory-Management-System
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies
+   ```bash
+   # Install server dependencies
+   cd server
+   npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   # Install client dependencies
+   cd ../client
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Configure environment variables
+   - Create a `.env` file in the server directory
+   - Add the following variables:
+     ```
+     PORT=5000
+     MONGODB_URI=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret
+     ```
 
-## Deploy on Vercel
+4. Run the application
+   ```bash
+   # Run backend server
+   cd server
+   npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   # In a separate terminal, run frontend
+   cd client
+   npm start
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# inventory-management-system
+5. Access the application at `http://localhost:3000`
+
+## API Documentation
+
+The API is organized around REST. All requests and responses use JSON format.
+
+Base URL: `/api/v1`
+
+### Authentication
+- `POST /auth/register` - Register a new user
+- `POST /auth/login` - Login user
+- `GET /auth/me` - Get current user
+
+### Products
+- `GET /products` - Get all products
+- `GET /products/:id` - Get product by ID
+- `POST /products` - Create a new product
+- `PUT /products/:id` - Update product
+- `DELETE /products/:id` - Delete product
+
+### Documentation for other endpoints follows similar patterns for:
+- Inventory
+- Orders
+- Suppliers
+- Customers
+- Reports
+
+## Deployment
+
+The application can be deployed using platforms like Heroku, AWS, or Azure with the following steps:
+
+1. Set up appropriate environment variables
+2. Configure the MongoDB connection for production
+3. Build the React frontend for production
+4. Deploy the Node.js backend server
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+Paritosh Sawai - [GitHub](https://github.com/paritoshsawai)
+
+Project Link: [https://github.com/paritoshsawai/Inventory-Management-System](https://github.com/paritoshsawai/Inventory-Management-System)
