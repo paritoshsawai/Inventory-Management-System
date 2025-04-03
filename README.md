@@ -123,7 +123,7 @@ inventory-management-system/
    npm start
    ```
 
-5. Access the application at `http://localhost:3000`
+5. Access the application at https://inventory-management-system-1dxj3x4u4-paritoshsawais-projects.vercel.app/
 
 ## API Documentation
 
