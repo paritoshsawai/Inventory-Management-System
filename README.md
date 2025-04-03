@@ -167,10 +167,6 @@ The application can be deployed using platforms like Heroku, AWS, or Azure with 
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
 Paritosh Sawai - [GitHub](https://github.com/paritoshsawai)
