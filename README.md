@@ -123,7 +123,7 @@ inventory-management-system/
    npm start
    ```
 
-5. Access the application at https://inventory-management-system-1dxj3x4u4-paritoshsawais-projects.vercel.app/
+5. Access the application at https://inventory-management-system-theta-neon.vercel.app/
 
 ## API Documentation
 
